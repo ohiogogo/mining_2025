@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHA256 Hash Calculator</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h3>SHA256 Hash Calculator</h3>
+    
+    <!-- 输入数据T -->
+    <label for="inputText">数据T (输入文本进行哈希计算):</label>
+    <input type="text" id="inputText" placeholder="请输入计算数据">
+
+    <!-- 输入难度D -->
+    <label for="inputNumber">难度D (哈希值前D位需要为0):</label>
+    <input type="number" id="inputNumber" placeholder="输入一个0到256的数字" value="16">
+
+    <!-- 输入搜索起点 -->
+    <label for="initial_r">搜索起点 (从哪个数字开始搜索):</label>
+    <input type="number" id="initial_r" placeholder="输入初始数字" value="0">
+
+    <!-- 显示预计尝试次数 -->
+    <label id="expectedAttempts">Expected Attempts : Unknown</label>
+
+    <!-- 按钮 -->
+    <button id="startBtn">开始计算</button>
+    <button id="stopBtn">停止计算</button>
+    <p id="result"></p>
+
+    <!-- 显示当前状态 -->
+    <p id="currentNumber"></p>
+    <p id="minHashDisplay"></p>
+  </div>
+
+  <script>
+      // 为 CryptoJS 提供全局对象
+      var global = window;
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script type="module" src="js/ui.js"></script>
+</body>
+</html>
